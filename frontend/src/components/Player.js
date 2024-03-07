@@ -19,17 +19,19 @@ const VideoList = () => {
 
     return (
         <div>
-            <h2 className="my-10 font-bold">Video Liste</h2>
+            <h2 className="my-10 font-bold flex justify-center">Video Liste</h2>
             <ul>
                 {videos.map(video => (
                     <li key={video.id}>
-                        <div className="border-2 flex flex-col justify-center items-center">
-                        <h3>{video.title}</h3>
-                        <video width="320" height="240" controls className="border-2 p-2">
-                            <source src={video.file_path} type="video/mp4" />
-                            Dein Browser unterstützt das Video-Tag nicht.
-                        </video>
-                        <p>{video.description}</p>
+                        <div className="p-4 w-full overflow-hidden">
+                            <div className="flex flex-col justify-center items-center">
+                                <h3 className="p-2">{video.title}</h3>
+                                <video controls className="border-2 p-2 md:w-1/2 w-full h-auto">
+                                    <source src={video.file_path} type="video/mp4" />
+                                    Dein Browser unterstützt das Video-Tag nicht.
+                                </video>
+                                <p>{video.description}</p>
+                            </div>
                         </div>
                     </li>
                 ))}
