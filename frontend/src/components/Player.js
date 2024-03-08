@@ -18,19 +18,19 @@ const VideoList = () => {
     }, []);
 
     return (
-        <div>
+        <div className="">
             <h2 className="my-10 font-bold flex justify-center">Video Liste</h2>
             <ul>
                 {videos.map(video => (
                     <li key={video.id}>
-                        <div className="p-4 w-full overflow-hidden">
-                            <div className="flex flex-col justify-center items-center">
-                                <h3 className="p-2">{video.title}</h3>
-                                <video controls className="border-2 p-2 md:w-1/2 w-full h-auto">
+                        <div className="p-4 mt-8 w-full overflow-hidden">
+                            <div className="flex flex-col justify-center items-center container mx-auto py-4 bg-white rounded-lg shadow-md border-2 p-2 md:w-1/2 w-full h-auto">
+                                <h3 className="pb-2 font-bold">{video.title}</h3>
+                                <video controls className="">
                                     <source src={video.file_path} type="video/mp4" />
                                     Dein Browser unterstützt das Video-Tag nicht.
                                 </video>
-                                <p>{video.description}</p>
+                                <p className="pt-2">{video.description}</p>
                             </div>
                         </div>
                     </li>
